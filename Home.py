@@ -23,7 +23,7 @@ data4 = dt['petal.width'].sum()
 dx=[data1,data2,data3,data4]
 dx2=pd.DataFrame(dx, index=["d1", "d2", "d3", "d4"])
 if st.button("แสดงการจินตทัศน์ข้อมูล"):
-   st.pie_chart(dx2)
+   st.area_chart(dx2)
    st.button("ไม่แสดงข้อมูล")
 else:
     st.write("ไม่แสดงข้อมูล")
