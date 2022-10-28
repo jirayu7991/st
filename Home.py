@@ -21,6 +21,11 @@ st.dataframe(dx)
 dt=pd.read_csv('./data/iris.csv')
 st.dataframe(dt)
 
+dt=dt.head(10)
+st.barchart(dt1)
+st.balloons()
+
 st.sidebar.markdown("# วิเคราะห์รายบุคคล ")
+
 
 
