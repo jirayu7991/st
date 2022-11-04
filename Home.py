@@ -44,11 +44,7 @@ sp_wd=st.number_input("กรุณาเลือกข้อมูล sepall.w
 
 if st.button("ทำนายผล"):
    st.markdown("ใส่โมเดล")
-   st.button("ไม่แสดงข้อมูล")
-else:
-    st.write("ไม่แสดงข้อมูล")
-
-    loaded_model = pickle.load(open('./data/trained_model.sav', 'rb'))
+   loaded_model = pickle.load(open('./data/trained_model.sav', 'rb'))
 
     input_data =  (pt_len,pt_wd,sp_len,sp_wd)
     # changing the input_data to numpy array
@@ -57,3 +53,8 @@ else:
     input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
     prediction = loaded_model.predict(input_data_reshaped)
     st.write(prediction)
+   st.button("ไม่แสดงข้อมูล")
+else:
+    st.write("ไม่แสดงข้อมูล")
+
+    
