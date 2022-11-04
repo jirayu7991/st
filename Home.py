@@ -43,7 +43,6 @@ sp_len=st.number_input("กรุณาเลือกข้อมูล sepal.l
 sp_wd=st.number_input("กรุณาเลือกข้อมูล sepall.width")
 
 if st.button("ทำนายผล"):
-   st.markdown("ใส่โมเดล")
    loaded_model = pickle.load(open('./data/trained_model.sav', 'rb'))
    input_data =  (pt_len,pt_wd,sp_len,sp_wd)
    # changing the input_data to numpy array
