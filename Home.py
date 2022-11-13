@@ -54,7 +54,7 @@ Tty=st.number_input("กรุณาเลือกข้อมูล Turbidity"
 Col=st.number_input("กรุณาเลือกข้อมูล Colour")
 
 if st.button("ทำนายผล"):
-   loaded_model = pickle.load(open('./data/trained_model1.sav', 'rb'))
+   loaded_model = pickle.load(open('./data/milk_model.sav', 'rb'))
    input_data =  (pH,Tture,Tae,Or,Fat,Tty,Col)
    # changing the input_data to numpy array
    input_data_as_numpy_array = np.asarray(input_data)
