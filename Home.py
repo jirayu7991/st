@@ -45,13 +45,13 @@ html_8="""
 st.markdown(html_8,unsafe_allow_html=True)
 st.markdown("")
 
-pH=st.slider("กรุณาเลือกข้อมูล pH")
+pH=st.number_input("กรุณาเลือกข้อมูล pH")
 Tture=st.slider("กรุณาเลือกข้อมูล Temprature")
 Tae= st.radio("กรุณาเลือกข้อมูล Taste: 0 ไม่เหมาะสม, 1 เหมาะสม",(0, 1))
 Or= st.radio("กรุณาเลือกข้อมูล Odor: 0 ไม่เหมาะสม, 1 เหมาะสม",(0, 1))
 Fat= st.radio("กรุณาเลือกข้อมูล Fat: 0 ไม่เหมาะสม, 1 เหมาะสม",(0, 1))
 Tty= st.radio("กรุณาเลือกข้อมูล Turbidity: 0 ไม่เหมาะสม, 1 เหมาะสม",(0, 1))
-Col=st.number_input("กรุณาเลือกข้อมูล Colour")
+Col=st.slider("กรุณาเลือกข้อมูล Colour")
 
 if st.button("ทำนายผล"):
    loaded_model = pickle.load(open('./data/milk_model.sav', 'rb'))
