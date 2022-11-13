@@ -62,9 +62,12 @@ if st.button("ทำนายผล"):
    input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
    prediction = loaded_model.predict(input_data_reshaped)
    st.write(prediction)
-   
+   if prediction == 'low':
+        st.image('./pic/20-percent.png')
+   elif prediction == 'medium':
+        st.image('./pic/50-percent.png')
+   else:
+        st.image('./pic/100-percent.png')
    st.button("ไม่แสดงข้อมูล")
 else:
     st.write("ไม่แสดงข้อมูล")
-
-    
