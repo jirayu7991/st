@@ -6,7 +6,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import pickle
 
-st.image('./pic/004.jpg')
+st.image('./pic/005.png')
 
 html_8="""
 <div style="background-color:#66CCCC;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:Bisque">
