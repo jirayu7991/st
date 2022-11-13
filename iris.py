@@ -17,17 +17,14 @@ html_8="""
 st.markdown(html_8,unsafe_allow_html=True)
 st.markdown("")
 
-dt=pd.read_csv("./data/milknew.csv")
+dt=pd.read_csv("./data/iris.csv")
 st.write(dt.head(10))
-data1 = dt['pH'].sum()
-data2 = dt['Temprature'].sum()
-data3 = dt['Taste'].sum()
-data4 = dt['Odor'].sum()
-data5 = dt['Fat'].sum()
-data6 = dt['Turbidity'].sum()
-data7 = dt['Colour	'].sum()
-dx=[data1,data2,data3,data4,data5,data6,data7]
-dx2=pd.DataFrame(dx, index=["d1", "d2", "d3", "d4", "d5", "d6", "d7"])
+data1 = dt['sepal.length'].sum()
+data2 = dt['sepal.width'].sum()
+data3 = dt['petal.length'].sum()
+data4 = dt['petal.width'].sum()
+dx=[data1,data2,data3,data4]
+dx2=pd.DataFrame(dx, index=["d1", "d2", "d3", "d4"])
 if st.button("แสดงการจินตทัศน์ข้อมูล"):
    st.area_chart(dx2)
    st.button("ไม่แสดงข้อมูล")
@@ -42,17 +39,14 @@ html_8="""
 st.markdown(html_8,unsafe_allow_html=True)
 st.markdown("")
 
-pH=st.slider("กรุณาเลือกข้อมูล pH")
-Tture=st.slider("กรุณาเลือกข้อมูล Temprature")
-Tae=st.number_input("กรุณาเลือกข้อมูล Taste")
-Or=st.number_input("กรุณาเลือกข้อมูล Odor")
-Fat=st.slider("กรุณาเลือกข้อมูล Fat")
-Tty=st.number_input("กรุณาเลือกข้อมูล Turbidity")
-Col=st.number_input("กรุณาเลือกข้อมูล Colour")
+pt_len=st.slider("กรุณาเลือกข้อมูล petal.length")
+pt_wd=st.slider("กรุณาเลือกข้อมูล petal.width")
+sp_len=st.number_input("กรุณาเลือกข้อมูล sepal.length")
+sp_wd=st.number_input("กรุณาเลือกข้อมูล sepall.width")
 
 if st.button("ทำนายผล"):
-   loaded_model = pickle.load(open('./data/trained_model(1).sav', 'rb'))
-   input_data =  (pH,Tture,Tae,Or,Fat,Tty,Col)
+   loaded_model = pickle.load(open('./data/trained_model.sav', 'rb'))
+   input_data =  (pt_len,pt_wd,sp_len,sp_wd)
    # changing the input_data to numpy array
    input_data_as_numpy_array = np.asarray(input_data)
    # reshape the array as we are predicting for one instance
