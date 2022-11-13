@@ -9,7 +9,7 @@ import pickle
 st.image('./pic/004.jpg')
 
 html_8="""
-<div style="background-color:#EE9513;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
+<div style="background-color:#66CCCC;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:Bisque">
 <center><h5>การทำนายข้อมูลคุณภาพนม</h5></center>
 </div>
 """
@@ -38,7 +38,7 @@ else:
     st.write("ไม่แสดงข้อมูล")
 
 html_8="""
-<div style="background-color:#EE9513;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
+<div style="background-color:#66CCCC;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:Bisque">
 <center><h5>การทำนายข้อมูล</h5></center>
 </div>
 """
@@ -51,7 +51,7 @@ Tae= st.radio("กรุณาเลือกข้อมูล Taste: 0 ไม�
 Or= st.radio("กรุณาเลือกข้อมูล Odor: 0 ไม่เหมาะสม, 1 เหมาะสม",(0, 1))
 Fat= st.radio("กรุณาเลือกข้อมูล Fat: 0 ไม่เหมาะสม, 1 เหมาะสม",(0, 1))
 Tty= st.radio("กรุณาเลือกข้อมูล Turbidity: 0 ไม่เหมาะสม, 1 เหมาะสม",(0, 1))
-Col=st.slider("กรุณาเลือกข้อมูล Colour")
+Col=st.number_inputr("กรุณาเลือกข้อมูล Colour")
 
 if st.button("ทำนายผล"):
    loaded_model = pickle.load(open('./data/milk_model.sav', 'rb'))
