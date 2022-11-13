@@ -10,7 +10,7 @@ st.image('./pic/004.jpg')
 
 html_8="""
 <div style="background-color:#EE9513;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:black">
-<center><h5>การทำนายข้อมูลดอกไม้</h5></center>
+<center><h5>การทำนายข้อมูลคุณภาพนม</h5></center>
 </div>
 """
 
@@ -19,15 +19,18 @@ st.markdown("")
 
 dt=pd.read_csv("./data/milknew.csv")
 st.write(dt.head(10))
+
 data1 = dt['pH'].sum()
 data2 = dt['Temprature'].sum()
 data3 = dt['Taste'].sum()
 data4 = dt['Odor'].sum()
 data5 = dt['Fat'].sum()
 data6 = dt['Turbidity'].sum()
-data7 = dt['Colour	'].sum()
+data7 = dt['Colour'].sum()
+
 dx=[data1,data2,data3,data4,data5,data6,data7]
 dx2=pd.DataFrame(dx, index=["d1", "d2", "d3", "d4", "d5", "d6", "d7"])
+
 if st.button("แสดงการจินตทัศน์ข้อมูล"):
    st.area_chart(dx2)
    st.button("ไม่แสดงข้อมูล")
@@ -59,12 +62,7 @@ if st.button("ทำนายผล"):
    input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
    prediction = loaded_model.predict(input_data_reshaped)
    st.write(prediction)
-   if prediction == 'Setosa':
-        st.image('./pic/001.jpg')
-   elif prediction == 'Versicolor':
-        st.image('./pic/003.jpg')
-   else:
-        st.image('./pic/002.jpg')
+   
    st.button("ไม่แสดงข้อมูล")
 else:
     st.write("ไม่แสดงข้อมูล")
