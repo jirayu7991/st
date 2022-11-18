@@ -10,7 +10,7 @@ st.image('./pic/005.png')
 
 html_8="""
 <div style="background-color:#66CCCC;padding:15px;border-radius:15px 15px 15px 15px;border-style:'solid';border-color:Bisque">
-<center><h5>การทำนายข้อมูลคุณภาพนม</h5></center>
+<center><h5>การพยากรณ์คุณภาพนมด้วยเทคนิค Decision tree</h5></center>
 </div>
 """
 
